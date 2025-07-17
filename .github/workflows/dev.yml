@@ -18,6 +18,6 @@ jobs:
           - run: | 
                 echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
                 chmod 700 /home/runner/ssh_key
-                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.104.79.165 -t "cd Brain-History/ && git pull origin master && npm install && node dist/index.js"
+                ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@3.104.79.165 -t "cd Brain-History/ && git pull origin master && npm install && pm2 restart Brainly-Dev-server"
 
             
